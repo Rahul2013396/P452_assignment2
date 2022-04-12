@@ -16,6 +16,13 @@ def Q1():
     for i in range(len(x)):
         fit.append(X[3]*(x[i]**3) + X[2]*(x[i]**2) + X[1]*(x[i]**1) +X[0])
 
+    sum = 0
+    for i in range(len(y)):
+        sum+= (y[i] - fit[i])**2
+    sum = sum**0.5
+
+    print(f'cubic coefficients are {X}')
+    print(f'least square error is  = {sum}')
 
     plt.plot(x,y,'.')
     plt.plot(x,fit)
@@ -23,6 +30,8 @@ def Q1():
 
 Q1()
 
+#cubic coefficients are [0.5770238673498951, 4.6976757145595, -11.060931165172533, 7.625785656722557]
+#least square error is  = 0.19279438310417016
 
 #Q2
 def Q2(a,m):
